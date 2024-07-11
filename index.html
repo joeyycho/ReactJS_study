@@ -9,10 +9,11 @@
 <script type="text/babel">
 const root = document.getElementById("root");
     const App =() => {
-        let [counter, setCounter] = React.useState(0);
+        const [counter, setCounter] = React.useState(0);
         const onClick = () => {
-            setCounter(counter++);
-        }
+            //setCounter(counter++); //1. setting number
+            setCounter((current) => current++); //2. sending function
+        };
         return (
         <div>
             <h3>Total clicks: {counter}</h3>
